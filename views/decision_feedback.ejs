@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack BS Trainer</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+
+        <% if (isOptimal){ %>
+
+            <div class="optimal">
+                <h2>Correct!</h2>
+            </div>
+    
+        <% } else { %>
+
+            <div class="notOptimal">
+                <h2>Incorrect!</h2>
+                <h2>Optimal Decision: <%= optimalDecision %></h2>
+            </div>
+
+        <% } %>
+
+        <!-- Dealer Cards -->
+        <div class="dealerCards">
+            <h2>Dealer Cards</h2>
+            <img src="images/<%= dealerUpcard.rank %><%= dealerUpcard.suit %>.svg">
+            <img src="images/Blue_Back.svg">
+        </div>
+
+        <!-- Player Cards -->
+        <div class="playerCards">
+            <h2>Player Cards</h2>
+            <img src="images/<%= playerCard1.rank %><%= playerCard1.suit %>.svg">
+            <img src="images/<%= playerCard2.rank %><%= playerCard2.suit %>.svg">
+        </div>
+
+        <div class="options"> 
+            <form action="/" method="GET">
+                <button type="submit">Next Hand</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

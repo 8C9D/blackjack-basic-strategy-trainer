@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack BS Trainer</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <% if (isBlackjack){ %>
+            <h2 class="leftBlackjack">Blackjack!</h2>
+            <h2 class="rightBlackjack">Blackjack!</h2>
+        <% } %>
+
+         <!-- Dealer Cards -->
+        <div class="dealerCards">
+            <h2>Dealer Cards</h2>
+            <img src="images/<%= dealerUpcard.rank %><%= dealerUpcard.suit %>.svg">
+            <img src="images/Blue_Back.svg">
+        </div>
+
+        <!-- Player Cards -->
+        <div class="playerCards">
+            <h2>Player Cards</h2>
+            <img src="images/<%= playerCard1.rank %><%= playerCard1.suit %>.svg">
+            <img src="images/<%= playerCard2.rank %><%= playerCard2.suit %>.svg">
+        </div>
+        
+        <!-- Options -->
+        <div class="options"> 
+            <% if (isBlackjack){ %>
+                <form action="/" method="GET">
+                    <button type="submit">Next Hand</button>
+                </form>
+            <% } else { %>
+                <form action="/split" method="POST">
+                    <button type="submit">Split</button>
+                </form>
+            
+                <form action="/hit" method="POST">
+                    <button type="submit">Hit</button>            
+                </form>
+            
+                <form action="/stand" method="POST">
+                    <button type="submit">Stand</button>
+                </form>
+            
+                <form action="/double" method="POST">
+                    <button type="submit">Double</button>
+                </form>
+            
+                <form action="/surrender" method="POST">
+                    <button type="submit">Surrender</button>
+                </form>
+            
+                <form action="/insurance" method="POST">
+                    <button type="submit">Insurance</button>
+                </form>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

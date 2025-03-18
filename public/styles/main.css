@@ -1,0 +1,84 @@
+body {
+    background-color: #222831;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap:1rem;
+}
+
+.dealerCards{
+    grid-row: 1;
+    grid-column: 2;
+    place-items: center;
+}
+
+.playerCards{
+    grid-row: 2;
+    grid-column: 2;
+    place-items: center;
+}
+
+.dealerCards > h2, .playerCards > h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color:#EEEEEE;
+}
+
+.options{
+    grid-row: 3;
+    grid-column: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:1rem;
+}
+
+.options > form > button {
+    background-color: #EEEEEE;
+    color: black;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px;
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for background color and scaling */
+}
+
+/* Button hover effect */
+.options > form > button:hover {
+    background-color: #00ADB5; 
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.optimal{
+    grid-row: 2;
+    grid-column: 1;
+    color:#1F7D53;
+    text-align: center;
+}
+
+.notOptimal{
+    color:#BF3131;
+    grid-row: 2;
+    grid-column: 3;
+    text-align: center;
+}
+
+.leftBlackjack{
+    font-size:x-large;
+    color:#D98324;
+    grid-row: 2;
+    grid-column: 1;
+    text-align: center;
+}
+
+.rightBlackjack{
+    font-size: x-large;
+    color:#D98324;
+    grid-row: 2;
+    grid-column: 3;
+    text-align: center;
+}
