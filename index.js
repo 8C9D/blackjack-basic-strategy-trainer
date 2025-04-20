@@ -13,6 +13,8 @@ const actions = ["Split", "Hit", "Stand", "Double", "Surrender", "Insurance"];
 const rankValueTen = ['10', 'J', 'Q', 'K'];
 const blackjackCombos = ['A10', 'AJ', 'AQ', 'AK', '10A', 'JA', 'QA', 'KA'];
 
+dotenv.config();
+
 const pool = new Pool({
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
@@ -20,8 +22,6 @@ const pool = new Pool({
     password: process.env.DB_PASSWORD,
     port: process.env.DB_PORT
 });
-
-dotenv.config();
 
 let playerCard1 = {rank: '', suit: ''};
 let playerCard2 = {rank: '', suit: ''};
